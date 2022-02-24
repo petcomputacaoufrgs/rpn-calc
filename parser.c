@@ -70,7 +70,10 @@ static int parse_op(struct parser *parser, enum operation *output)
         *output = op_mul;
     } else if (advance_op(parser, OP_DIV_SYM, sizeof(OP_DIV_SYM))) {
         *output = op_div;
-    } else {
+    } else if (advance_op(parser, OP_POW_SYM, sizeof(OP_POW_SYM))) {
+        *output = op_pow;
+    } else if (advance_op(parser, OP_EXP_SYM, sizeof(OP_EXP_SYM))) {
+        *output = op_exp;} else {
         success = 0;
     }
 
