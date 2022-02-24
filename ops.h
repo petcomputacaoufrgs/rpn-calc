@@ -9,6 +9,8 @@
 #define OP_DIV_SYM "/"
 #define OP_POW_SYM "^"
 #define OP_EXP_SYM "exp"
+#define OP_LOG_SYM "log"
+#define OP_LN_SYM "ln"
 
 enum operation {
     op_add,
@@ -16,7 +18,9 @@ enum operation {
     op_mul,
     op_div,
     op_pow,
-    op_exp
+    op_exp,
+    op_log,
+    op_ln
 };
 
 int op_exec(enum operation op, struct stack **stack);

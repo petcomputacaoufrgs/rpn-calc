@@ -72,6 +72,10 @@ static int parse_op(struct parser *parser, enum operation *output)
         *output = op_div;
     } else if (advance_op(parser, OP_POW_SYM, sizeof(OP_POW_SYM))) {
         *output = op_pow;
+    } else if (advance_op(parser, OP_LOG_SYM, sizeof(OP_LOG_SYM))) {
+        *output = op_log;
+    } else if (advance_op(parser, OP_LN_SYM, sizeof(OP_LN_SYM))) {
+        *output = op_ln;
     } else if (advance_op(parser, OP_EXP_SYM, sizeof(OP_EXP_SYM))) {
         *output = op_exp;} else {
         success = 0;
