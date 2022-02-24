@@ -67,6 +67,30 @@ int op_exec(enum operation op, struct stack **stack)
             stack_push(stack, atan(left));
         }
         break;
+    case op_pow:
+        success = stack_pop(stack, &right) && stack_pop(stack, &left);
+        if (success) {
+            stack_push(stack, pow(left, right));
+        }
+        break;
+    case op_exp:
+        success = stack_pop(stack, &left);
+        if (success) {
+            stack_push(stack, exp(left));
+        }
+        break;
+    case op_log:
+        success = stack_pop(stack, &right) && stack_pop(stack, &left);
+        if (success) {
+            stack_push(stack, log(right) / log(left));
+        }
+        break;
+    case op_ln:
+        success = stack_pop(stack, &left);
+        if (success) {
+            stack_push(stack, log(left));
+        }
+        break;
     }
 
     return success;

@@ -13,6 +13,10 @@
 #define OP_ARCSIN_SYM "arcsin"
 #define OP_ARCCOS_SYM "arccos"
 #define OP_ARCTAN_SYM "arctan"
+#define OP_POW_SYM "^"
+#define OP_EXP_SYM "exp"
+#define OP_LOG_SYM "log"
+#define OP_LN_SYM "ln"
 
 enum operation {
     op_add,
@@ -24,7 +28,11 @@ enum operation {
     op_tan,
     op_arcsin,
     op_arccos,
-    op_arctan
+    op_arctan,
+    op_pow,
+    op_exp,
+    op_log,
+    op_ln
 };
 
 int op_exec(enum operation op, struct stack **stack);
