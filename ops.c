@@ -49,6 +49,24 @@ int op_exec(enum operation op, struct stack **stack)
             stack_push(stack, tan(left));
         }
         break;
+    case op_arcsin:
+        success = stack_pop(stack, &left);
+        if (success) {
+            stack_push(stack, asin(left));
+        }
+        break;
+    case op_arccos:
+        success = stack_pop(stack, &left);
+        if (success) {
+            stack_push(stack, acos(left));
+        }
+        break;
+    case op_arctan:
+        success = stack_pop(stack, &left);
+        if (success) {
+            stack_push(stack, atan(left));
+        }
+        break;
     }
 
     return success;

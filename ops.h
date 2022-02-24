@@ -10,6 +10,9 @@
 #define OP_SIN_SYM "sin"
 #define OP_COS_SYM "cos"
 #define OP_TAN_SYM "tan"
+#define OP_ARCSIN_SYM "arcsin"
+#define OP_ARCCOS_SYM "arccos"
+#define OP_ARCTAN_SYM "arctan"
 
 enum operation {
     op_add,
@@ -18,7 +21,10 @@ enum operation {
     op_div,
     op_sin,
     op_cos,
-    op_tan
+    op_tan,
+    op_arcsin,
+    op_arccos,
+    op_arctan
 };
 
 int op_exec(enum operation op, struct stack **stack);

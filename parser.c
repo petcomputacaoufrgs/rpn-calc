@@ -76,6 +76,12 @@ static int parse_op(struct parser *parser, enum operation *output)
         *output = op_cos;
     } else if (advance_op(parser, OP_TAN_SYM, sizeof(OP_TAN_SYM))) {
         *output = op_tan;
+    } else if (advance_op(parser, OP_ARCSIN_SYM, sizeof(OP_ARCSIN_SYM))) {
+        *output = op_arcsin;
+    } else if (advance_op(parser, OP_ARCCOS_SYM, sizeof(OP_ARCCOS_SYM))) {
+        *output = op_arccos;
+    } else if (advance_op(parser, OP_ARCTAN_SYM, sizeof(OP_ARCTAN_SYM))) {
+        *output = op_arctan;
     } else {
         success = 0;
     }
